@@ -14,19 +14,22 @@ inline with a quasi-quoter or in an external file. Shakespeare\
 interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
-Version:        0.10.0
-Release:        2%{?dist}
+Version:        0.10.1.1
+Release:        1%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
 License:        BSD
+# BEGIN cabal2spec
 URL:            http://hackage.haskell.org/package/%{pkg_name}
 Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{version}/%{pkg_name}-%{version}.tar.gz
 ExclusiveArch:  %{ghc_arches}
 BuildRequires:  ghc-Cabal-devel
-# macros for building haskell packages
 BuildRequires:  ghc-rpm-macros
+%if %{undefined without_hscolour}
 BuildRequires:  hscolour
+%endif
+# END cabal2spec
 BuildRequires:  ghc-blaze-html-prof, ghc-failure-prof, ghc-parsec-prof, ghc-process-prof, ghc-template-haskell-prof
 
 %description
@@ -51,6 +54,9 @@ BuildRequires:  ghc-blaze-html-prof, ghc-failure-prof, ghc-parsec-prof, ghc-proc
 
 
 %changelog
+* Sat Oct  8 2011 Jens Petersen <petersen@redhat.com> - 0.10.1.1-1
+- update to 0.10.1.1
+
 * Thu Sep  8 2011 Jens Petersen <petersen@redhat.com> - 0.10.0-2
 - BR ghc-*-prof
 
