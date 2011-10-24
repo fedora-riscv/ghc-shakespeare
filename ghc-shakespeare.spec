@@ -15,7 +15,7 @@ interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
 Version:        0.10.1.1
-Release:        1%{?dist}
+Release:        1%{?dist}.1
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -54,6 +54,9 @@ BuildRequires:  ghc-blaze-html-prof, ghc-failure-prof, ghc-parsec-prof, ghc-proc
 
 
 %changelog
+* Mon Oct 24 2011 Marcela Mašláňová <mmaslano@redhat.com> - 0.10.1.1-1.1
+- rebuild with new gmp without compat lib
+
 * Sat Oct  8 2011 Jens Petersen <petersen@redhat.com> - 0.10.1.1-1
 - update to 0.10.1.1
 
