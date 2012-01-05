@@ -1,13 +1,11 @@
-# For Haskell Packaging Guidelines see:
-# - https://fedoraproject.org/wiki/Packaging:Haskell
-# - https://fedoraproject.org/wiki/PackagingDrafts/Haskell
+# cabal2spec-0.25.2
+# https://fedoraproject.org/wiki/Packaging:Haskell
+# https://fedoraproject.org/wiki/PackagingDrafts/Haskell
 
 %global pkg_name shakespeare
 
-# common part of summary for all the subpackages
 %global common_summary Haskell compile-time templating library
 
-# main description used for all the subpackages
 %global common_description Shakespeare is a template family for type-safe, efficient templates\
 with simple variable interpolation . Shakespeare templates can be used\
 inline with a quasi-quoter or in an external file. Shakespeare\
@@ -15,7 +13,7 @@ interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
 Version:        0.10.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -25,12 +23,13 @@ URL:            http://hackage.haskell.org/package/%{pkg_name}
 Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{version}/%{pkg_name}-%{version}.tar.gz
 ExclusiveArch:  %{ghc_arches}
 BuildRequires:  ghc-Cabal-devel
-BuildRequires:  ghc-rpm-macros
-%if %{undefined without_hscolour}
-BuildRequires:  hscolour
-%endif
+BuildRequires:  ghc-rpm-macros %{!?without_hscolour:hscolour}
 # END cabal2spec
-BuildRequires:  ghc-blaze-html-prof, ghc-failure-prof, ghc-parsec-prof, ghc-process-prof, ghc-template-haskell-prof
+BuildRequires:  ghc-blaze-html-prof
+BuildRequires:  ghc-failure-prof
+BuildRequires:  ghc-parsec-prof
+BuildRequires:  ghc-process-prof
+BuildRequires:  ghc-template-haskell-prof
 
 %description
 %{common_description}
@@ -48,12 +47,21 @@ BuildRequires:  ghc-blaze-html-prof, ghc-failure-prof, ghc-parsec-prof, ghc-proc
 %ghc_lib_install
 
 
-# define the shared, devel and prof subpkgs, devel scripts,
-# and filelists: ghc-shakespeare.files, ghc-shakespeare-devel.files
-%ghc_lib_package
+%ghc_devel_package
+
+%ghc_devel_description
+
+
+%ghc_devel_post_postun
+
+
+%ghc_files
 
 
 %changelog
+* Thu Jan  5 2012 Jens Petersen <petersen@redhat.com> - 0.10.2-2
+- update to cabal2spec-0.25.2
+
 * Tue Nov  1 2011 Jens Petersen <petersen@redhat.com> - 0.10.2-1
 - update to 0.10.2
 
