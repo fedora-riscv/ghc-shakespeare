@@ -12,8 +12,8 @@ inline with a quasi-quoter or in an external file. Shakespeare\
 interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
-Version:        0.10.2
-Release:        2%{?dist}
+Version:        0.10.3.1
+Release:        1%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -21,7 +21,7 @@ License:        BSD
 # BEGIN cabal2spec
 URL:            http://hackage.haskell.org/package/%{pkg_name}
 Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{version}/%{pkg_name}-%{version}.tar.gz
-ExclusiveArch:  %{ghc_arches}
+ExclusiveArch:  %{ghc_arches_with_ghci}
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros %{!?without_hscolour:hscolour}
 # END cabal2spec
@@ -59,6 +59,10 @@ BuildRequires:  ghc-template-haskell-prof
 
 
 %changelog
+* Wed Mar  7 2012 Jens Petersen <petersen@redhat.com> - 0.10.3.1-1
+- update to 0.10.3.1
+- only build on ghc_arches_with_ghci
+
 * Thu Jan  5 2012 Jens Petersen <petersen@redhat.com> - 0.10.2-2
 - update to cabal2spec-0.25.2
 
