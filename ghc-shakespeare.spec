@@ -25,7 +25,6 @@ ExclusiveArch:  %{ghc_arches_with_ghci}
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros %{!?without_hscolour:hscolour}
 # END cabal2spec
-BuildRequires:  ghc-failure-prof
 BuildRequires:  ghc-parsec-prof
 BuildRequires:  ghc-process-prof
 BuildRequires:  ghc-template-haskell-prof
@@ -61,7 +60,7 @@ BuildRequires:  ghc-text-prof
 %changelog
 * Fri Mar 23 2012 Jens Petersen <petersen@redhat.com> - 0.11-1
 - update to 0.11
-- depends on text not blaze-html
+- depends on text not blaze-html and failure
 
 * Wed Mar  7 2012 Jens Petersen <petersen@redhat.com> - 0.10.3.1-1
 - update to 0.10.3.1
