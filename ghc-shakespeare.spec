@@ -12,7 +12,7 @@ inline with a quasi-quoter or in an external file. Shakespeare\
 interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
-Version:        1.0.0.1
+Version:        1.0.0.2
 Release:        1%{?dist}
 Summary:        %{common_summary}
 
@@ -58,6 +58,9 @@ BuildRequires:  ghc-text-prof
 
 
 %changelog
+* Wed Jun 13 2012 Jens Petersen <petersen@redhat.com> - 1.0.0.2-1
+- update to 1.0.0.2
+
 * Thu Apr 26 2012 Jens Petersen <petersen@redhat.com> - 1.0.0.1-1
 - update to 1.0.0.1
 
