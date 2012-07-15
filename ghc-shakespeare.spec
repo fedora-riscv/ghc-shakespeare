@@ -7,7 +7,7 @@
 %global common_summary Haskell compile-time templating library
 
 %global common_description Shakespeare is a template family for type-safe, efficient templates\
-with simple variable interpolation . Shakespeare templates can be used\
+with simple variable interpolation. Shakespeare templates can be used\
 inline with a quasi-quoter or in an external file. Shakespeare\
 interpolates variables according to the type being inserted.
 
