@@ -13,7 +13,7 @@ interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
 Version:        1.0.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -25,10 +25,10 @@ ExclusiveArch:  %{ghc_arches_with_ghci}
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros %{!?without_hscolour:hscolour}
 # END cabal2spec
-BuildRequires:  ghc-parsec-prof
-BuildRequires:  ghc-process-prof
-BuildRequires:  ghc-template-haskell-prof
-BuildRequires:  ghc-text-prof
+BuildRequires:  ghc-parsec-devel
+BuildRequires:  ghc-process-devel
+BuildRequires:  ghc-template-haskell-devel
+BuildRequires:  ghc-text-devel
 
 %description
 %{common_description}
@@ -58,6 +58,9 @@ BuildRequires:  ghc-text-prof
 
 
 %changelog
+* Mon Jul 16 2012 Jens Petersen <petersen@redhat.com> - 1.0.0.2-2
+- change prof BRs to devel
+
 * Wed Jun 13 2012 Jens Petersen <petersen@redhat.com> - 1.0.0.2-1
 - update to 1.0.0.2
 
