@@ -13,7 +13,7 @@ interpolates variables according to the type being inserted.
 
 Name:           ghc-%{pkg_name}
 Version:        1.0.0.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        %{common_summary}
 
 Group:          System Environment/Libraries
@@ -58,6 +58,9 @@ BuildRequires:  ghc-text-devel
 
 
 %changelog
+* Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
 * Mon Jul 16 2012 Jens Petersen <petersen@redhat.com> - 1.0.0.2-2
 - change prof BRs to devel
 
