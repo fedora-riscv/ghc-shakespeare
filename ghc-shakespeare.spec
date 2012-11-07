@@ -1,34 +1,35 @@
-# cabal2spec-0.25.2
 # https://fedoraproject.org/wiki/Packaging:Haskell
 # https://fedoraproject.org/wiki/PackagingDrafts/Haskell
 
 %global pkg_name shakespeare
 
-%global common_summary Haskell compile-time templating library
+%global common_summary Compile-time interpolated templates
 
-%global common_description Shakespeare is a template family for type-safe, efficient templates\
-with simple variable interpolation. Shakespeare templates can be used\
-inline with a quasi-quoter or in an external file. Shakespeare\
-interpolates variables according to the type being inserted.
+%global common_description Shakespeare is a family of type-safe, efficient template languages.\
+Shakespeare templates are expanded at compile-time,\
+ensuring that all interpolated variables are in scope.\
+Variables are interpolated according to their type through a typeclass.\
+Shakespeare templates can be used inline with a quasi-quoter\
+or in an external file.
 
 Name:           ghc-%{pkg_name}
-Version:        1.0.0.2
-Release:        3%{?dist}
+Version:        1.0.1.4
+Release:        1%{?dist}
 Summary:        %{common_summary}
 
-Group:          System Environment/Libraries
-License:        BSD
-# BEGIN cabal2spec
+License:        MIT
 URL:            http://hackage.haskell.org/package/%{pkg_name}
 Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{version}/%{pkg_name}-%{version}.tar.gz
-ExclusiveArch:  %{ghc_arches_with_ghci}
+
 BuildRequires:  ghc-Cabal-devel
-BuildRequires:  ghc-rpm-macros %{!?without_hscolour:hscolour}
-# END cabal2spec
+BuildRequires:  ghc-rpm-macros
+# Begin cabal-rpm deps:
 BuildRequires:  ghc-parsec-devel
 BuildRequires:  ghc-process-devel
 BuildRequires:  ghc-template-haskell-devel
 BuildRequires:  ghc-text-devel
+ExclusiveArch:  %{ghc_arches_with_ghci}
+# End cabal-rpm deps
 
 %description
 %{common_description}
@@ -58,6 +59,10 @@ BuildRequires:  ghc-text-devel
 
 
 %changelog
+* Wed Nov  7 2012 Jens Petersen <petersen@redhat.com> - 1.0.1.4-1
+- update to 1.0.1.4
+- license is now MIT
+
 * Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.0.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
