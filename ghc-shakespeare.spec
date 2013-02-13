@@ -14,7 +14,7 @@ or in an external file.
 
 Name:           ghc-%{pkg_name}
 Version:        1.0.1.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{common_summary}
 
 License:        MIT
@@ -59,6 +59,9 @@ ExclusiveArch:  %{ghc_arches_with_ghci}
 
 
 %changelog
+* Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.1.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Wed Nov  7 2012 Jens Petersen <petersen@redhat.com> - 1.0.1.4-1
 - update to 1.0.1.4
 - license is now MIT
