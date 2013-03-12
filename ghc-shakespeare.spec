@@ -13,8 +13,8 @@ Shakespeare templates can be used inline with a quasi-quoter\
 or in an external file.
 
 Name:           ghc-%{pkg_name}
-Version:        1.0.1.4
-Release:        2%{?dist}
+Version:        1.0.3.1
+Release:        1%{?dist}
 Summary:        %{common_summary}
 
 License:        MIT
@@ -59,6 +59,9 @@ ExclusiveArch:  %{ghc_arches_with_ghci}
 
 
 %changelog
+* Tue Mar 12 2013 Jens Petersen <petersen@redhat.com> - 1.0.3.1-1
+- update to 1.0.3.1
+
 * Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.1.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
