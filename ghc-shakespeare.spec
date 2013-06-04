@@ -1,21 +1,11 @@
 # https://fedoraproject.org/wiki/Packaging:Haskell
-# https://fedoraproject.org/wiki/PackagingDrafts/Haskell
 
 %global pkg_name shakespeare
 
-%global common_summary Compile-time interpolated templates
-
-%global common_description Shakespeare is a family of type-safe, efficient template languages.\
-Shakespeare templates are expanded at compile-time,\
-ensuring that all interpolated variables are in scope.\
-Variables are interpolated according to their type through a typeclass.\
-Shakespeare templates can be used inline with a quasi-quoter\
-or in an external file.
-
 Name:           ghc-%{pkg_name}
-Version:        1.0.3.1
+Version:        1.0.4
 Release:        1%{?dist}
-Summary:        %{common_summary}
+Summary:        Toolkit for compile-time interpolated templates
 
 License:        MIT
 URL:            http://hackage.haskell.org/package/%{pkg_name}
@@ -32,7 +22,26 @@ ExclusiveArch:  %{ghc_arches_with_ghci}
 # End cabal-rpm deps
 
 %description
-%{common_description}
+Shakespeare is a family of type-safe, efficient template languages.
+Shakespeare templates are expanded at compile-time,
+ensuring that all interpolated variables are in scope.
+Variables are interpolated according to their type through a typeclass.
+Shakespeare templates can be used inline with a quasi-quoter
+or in an external file.
+
+See the documentation at <http://www.yesodweb.com/book/shakespearean-templates>
+for more details.
+
+
+%package devel
+Summary:        Haskell %{pkg_name} library development files
+Requires:       ghc-compiler = %{ghc_version}
+Requires(post): ghc-compiler = %{ghc_version}
+Requires(postun): ghc-compiler = %{ghc_version}
+Requires:       %{name} = %{version}-%{release}
+
+%description devel
+This package provides the Haskell %{pkg_name} library development files.
 
 
 %prep
@@ -47,18 +56,26 @@ ExclusiveArch:  %{ghc_arches_with_ghci}
 %ghc_lib_install
 
 
-%ghc_devel_package
-
-%ghc_devel_description
-
-
-%ghc_devel_post_postun
+%post devel
+%ghc_pkg_recache
 
 
-%ghc_files LICENSE
+%postun devel
+%ghc_pkg_recache
+
+
+%files -f %{name}.files
+%doc LICENSE
+
+
+%files devel -f %{name}-devel.files
 
 
 %changelog
+* Tue Jun 04 2013 Jens Petersen <petersen@redhat.com> - 1.0.4-1
+- update to 1.0.4
+- update to new simplified Haskell Packaging Guidelines
+
 * Tue Mar 12 2013 Jens Petersen <petersen@redhat.com> - 1.0.3.1-1
 - update to 1.0.3.1
 
