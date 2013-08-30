@@ -3,7 +3,7 @@
 %global pkg_name shakespeare
 
 Name:           ghc-%{pkg_name}
-Version:        1.0.5
+Version:        1.0.5.1
 Release:        1%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
@@ -76,6 +76,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Fri Aug 30 2013 Jens Petersen <petersen@redhat.com> - 1.0.5.1-1
+- update to 1.0.5.1
+
 * Wed Aug 28 2013 Jens Petersen <petersen@redhat.com> - 1.0.5-1
 - update to 1.0.5
 
