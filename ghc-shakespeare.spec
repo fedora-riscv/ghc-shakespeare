@@ -3,8 +3,8 @@
 %global pkg_name shakespeare
 
 Name:           ghc-%{pkg_name}
-Version:        1.0.4
-Release:        2%{?dist}
+Version:        1.0.5
+Release:        1%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
 License:        MIT
@@ -14,10 +14,14 @@ Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{versio
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
 # Begin cabal-rpm deps:
+BuildRequires:  ghc-containers-devel
 BuildRequires:  ghc-parsec-devel
 BuildRequires:  ghc-process-devel
+BuildRequires:  ghc-system-fileio-devel
+BuildRequires:  ghc-system-filepath-devel
 BuildRequires:  ghc-template-haskell-devel
 BuildRequires:  ghc-text-devel
+BuildRequires:  ghc-time-devel
 ExclusiveArch:  %{ghc_arches_with_ghci}
 # End cabal-rpm deps
 
@@ -72,6 +76,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Wed Aug 28 2013 Jens Petersen <petersen@redhat.com> - 1.0.5-1
+- update to 1.0.5
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
