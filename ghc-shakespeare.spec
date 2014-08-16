@@ -4,7 +4,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.0.5.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
 License:        MIT
@@ -76,6 +76,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.5.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0.5.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
