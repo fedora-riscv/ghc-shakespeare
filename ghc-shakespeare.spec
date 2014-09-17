@@ -8,7 +8,7 @@
 %global debug_package %{nil}
 
 Name:           ghc-%{pkg_name}
-Version:        1.2.1.1
+Version:        2.0.1.1
 Release:        1%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
@@ -19,7 +19,13 @@ Source0:        http://hackage.haskell.org/package/%{pkg_name}-%{version}/%{pkg_
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
 # Begin cabal-rpm deps:
+BuildRequires:  ghc-aeson-devel
+BuildRequires:  ghc-blaze-html-devel
+BuildRequires:  ghc-blaze-markup-devel
+BuildRequires:  ghc-bytestring-devel
 BuildRequires:  ghc-containers-devel
+BuildRequires:  ghc-directory-devel
+BuildRequires:  ghc-exceptions-devel
 BuildRequires:  ghc-parsec-devel
 BuildRequires:  ghc-process-devel
 BuildRequires:  ghc-system-fileio-devel
@@ -27,17 +33,20 @@ BuildRequires:  ghc-system-filepath-devel
 BuildRequires:  ghc-template-haskell-devel
 BuildRequires:  ghc-text-devel
 BuildRequires:  ghc-time-devel
+BuildRequires:  ghc-transformers-devel
 ExclusiveArch:  %{ghc_arches_with_ghci}
 %if %{with tests}
+BuildRequires:  ghc-HUnit-devel
 BuildRequires:  ghc-hspec-devel
 %endif
 # End cabal-rpm deps
 
 %description
 Shakespeare is a family of type-safe, efficient template languages.
-Shakespeare templates are expanded at compile-time,
-ensuring that all interpolated variables are in scope.
-Variables are interpolated according to their type through a typeclass.
+Shakespeare templates are expanded at compile-time, ensuring that all
+interpolated variables are in scope. Variables are interpolated according to
+their type through a typeclass.
+
 Shakespeare templates can be used inline with a quasi-quoter
 or in an external file.
 
@@ -91,6 +100,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Wed Sep 17 2014 Jens Petersen <petersen@redhat.com> - 2.0.1.1-1
+- update to 2.0.1.1
+
 * Thu Aug 28 2014 Jens Petersen <petersen@redhat.com> - 1.2.1.1-1
 - update to 1.2.1.1
 - refresh to cblrpm-0.8.11
