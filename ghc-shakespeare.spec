@@ -9,7 +9,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        2.0.1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
 License:        MIT
@@ -40,6 +40,11 @@ BuildRequires:  ghc-HUnit-devel
 BuildRequires:  ghc-hspec-devel
 %endif
 # End cabal-rpm deps
+Obsoletes:      ghc-hamlet < 1.3
+Obsoletes:      ghc-shakespeare-css < 1.2
+Obsoletes:      ghc-shakespeare-i18n < 1.2
+Obsoletes:      ghc-shakespeare-js < 1.4
+Obsoletes:      ghc-shakespeare-text < 1.2
 
 %description
 Shakespeare is a family of type-safe, efficient template languages.
@@ -61,6 +66,11 @@ Requires:       ghc-compiler = %{ghc_version}
 Requires(post): ghc-compiler = %{ghc_version}
 Requires(postun): ghc-compiler = %{ghc_version}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Obsoletes:      ghc-hamlet-devel < 1.3
+Obsoletes:      ghc-shakespeare-css-devel < 1.2
+Obsoletes:      ghc-shakespeare-i18n-devel < 1.2
+Obsoletes:      ghc-shakespeare-js-devel < 1.4
+Obsoletes:      ghc-shakespeare-text-devel < 1.2
 
 %description devel
 This package provides the Haskell %{pkg_name} library development files.
@@ -100,6 +110,10 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Thu Mar  5 2015 Jens Petersen <petersen@redhat.com> - 2.0.1.1-2
+- obsolete hamlet, shakespeare-css, shakespeare-i18n, shakespeare-js,
+  shakespeare-text
+
 * Wed Sep 17 2014 Jens Petersen <petersen@redhat.com> - 2.0.1.1-1
 - update to 2.0.1.1
 
