@@ -4,14 +4,17 @@
 
 %bcond_with tests
 
+# no useful debuginfo for Haskell packages without C sources
+%global debug_package %{nil}
+
 Name:           ghc-%{pkg_name}
-Version:        2.0.6
-Release:        1%{?dist}
+Version:        2.0.1.1
+Release:        4%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
 License:        MIT
-Url:            https://hackage.haskell.org/package/%{pkg_name}
-Source0:        https://hackage.haskell.org/package/%{pkg_name}-%{version}/%{pkg_name}-%{version}.tar.gz
+URL:            http://hackage.haskell.org/package/%{pkg_name}
+Source0:        http://hackage.haskell.org/package/%{pkg_name}-%{version}/%{pkg_name}-%{version}.tar.gz
 
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
@@ -25,6 +28,8 @@ BuildRequires:  ghc-directory-devel
 BuildRequires:  ghc-exceptions-devel
 BuildRequires:  ghc-parsec-devel
 BuildRequires:  ghc-process-devel
+BuildRequires:  ghc-system-fileio-devel
+BuildRequires:  ghc-system-filepath-devel
 BuildRequires:  ghc-template-haskell-devel
 BuildRequires:  ghc-text-devel
 BuildRequires:  ghc-time-devel
@@ -82,8 +87,6 @@ This package provides the Haskell %{pkg_name} library development files.
 %install
 %ghc_lib_install
 
-rm %{buildroot}%{ghc_pkgdocdir}/LICENSE
-
 
 %check
 %if %{with tests}
@@ -100,16 +103,13 @@ rm %{buildroot}%{ghc_pkgdocdir}/LICENSE
 
 
 %files -f %{name}.files
-%license LICENSE
+%doc LICENSE
 
 
 %files devel -f %{name}-devel.files
 
 
 %changelog
-* Wed Sep 30 2015 Jens Petersen <petersen@redhat.com> - 2.0.6-1
-- update to 2.0.6
-
 * Tue Sep  8 2015 Peter Robinson <pbrobinson@fedoraproject.org> 2.0.1.1-4
 - Rebuild (aarch64 hashes)
 
