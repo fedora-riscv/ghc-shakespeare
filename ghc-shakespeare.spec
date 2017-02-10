@@ -10,7 +10,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        2.0.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Toolkit for compile-time interpolated templates
 
 License:        MIT
@@ -110,6 +110,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.0.9-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Sun Jun 26 2016 Jens Petersen <petersen@redhat.com> - 2.0.9-1
 - update to 2.0.9
 
