@@ -7,8 +7,8 @@
 %bcond_with tests
 
 Name:           ghc-%{pkg_name}
-Version:        2.0.12.1
-Release:        3%{?dist}
+Version:        2.0.14.1
+Release:        1%{?dist}
 Summary:        A toolkit for making compile-time interpolated templates
 
 License:        MIT
@@ -117,6 +117,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Wed Jan 24 2018 Jens Petersen <petersen@redhat.com> - 2.0.14.1-1
+- update to 2.0.14.1
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.0.12.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
