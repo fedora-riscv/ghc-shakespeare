@@ -7,8 +7,8 @@
 %bcond_with tests
 
 Name:           ghc-%{pkg_name}
-Version:        2.0.15
-Release:        3%{?dist}
+Version:        2.0.20
+Release:        1%{?dist}
 Summary:        A toolkit for making compile-time interpolated templates
 
 License:        MIT
@@ -121,6 +121,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Thu Feb 21 2019 Jens Petersen <petersen@redhat.com> - 2.0.20-1
+- update to 2.0.20
+
 * Sun Feb 17 2019 Jens Petersen <petersen@redhat.com> - 2.0.15-3
 - refresh to cabal-rpm-0.13
 
