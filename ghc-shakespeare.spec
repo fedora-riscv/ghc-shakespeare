@@ -7,8 +7,8 @@
 %bcond_with tests
 
 Name:           ghc-%{pkg_name}
-Version:        2.0.20
-Release:        4%{?dist}
+Version:        2.0.24
+Release:        1%{?dist}
 Summary:        A toolkit for making compile-time interpolated templates
 
 License:        MIT
@@ -144,6 +144,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Fri Feb 14 2020 Jens Petersen <petersen@redhat.com> - 2.0.24-1
+- update to 2.0.24
+
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 2.0.20-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
