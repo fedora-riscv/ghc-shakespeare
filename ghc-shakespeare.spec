@@ -7,7 +7,7 @@
 %bcond_with tests
 
 Name:           ghc-%{pkg_name}
-Version:        2.0.24
+Version:        2.0.24.1
 Release:        1%{?dist}
 Summary:        A toolkit for making compile-time interpolated templates
 
@@ -33,6 +33,7 @@ BuildRequires:  ghc-process-prof
 BuildRequires:  ghc-scientific-prof
 BuildRequires:  ghc-template-haskell-prof
 BuildRequires:  ghc-text-prof
+BuildRequires:  ghc-th-lift-prof
 BuildRequires:  ghc-time-prof
 BuildRequires:  ghc-transformers-prof
 BuildRequires:  ghc-unordered-containers-prof
@@ -134,6 +135,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Thu Jul 16 2020 Jens Petersen <petersen@redhat.com> - 2.0.24.1-1
+- update to 2.0.24.1
+
 * Fri Feb 14 2020 Jens Petersen <petersen@redhat.com> - 2.0.24-1
 - update to 2.0.24
 
