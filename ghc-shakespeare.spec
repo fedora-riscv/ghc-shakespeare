@@ -8,7 +8,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        2.0.26
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A toolkit for making compile-time interpolated templates
 
 License:        MIT
@@ -138,6 +138,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 2.0.26-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
 * Tue Jun 07 2022 Jens Petersen <petersen@redhat.com> - 2.0.26-1
 - https://hackage.haskell.org/package/shakespeare-2.0.26/changelog
 
