@@ -4,11 +4,13 @@
 %global pkg_name shakespeare
 %global pkgver %{pkg_name}-%{version}
 
+%ifnarch riscv64
 %bcond_with tests
+%endif
 
 Name:           ghc-%{pkg_name}
 Version:        2.1.0
-Release:        %autorelease
+Release:        %autorelease -e 0.rv64
 Summary:        A toolkit for making compile-time interpolated templates
 
 License:        MIT
